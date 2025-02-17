@@ -160,21 +160,20 @@ impl MlsMessageOut {
     pub fn body(&self) -> &MlsMessageBodyOut {
         &self.body
     }
-}
 
-// Convenience functions for tests and test-utils
-
-#[cfg(any(feature = "test-utils", test))]
-impl MlsMessageOut {
     /// Turn an [`MlsMessageOut`] into a [`Welcome`].
-    #[cfg(any(feature = "test-utils", test))]
     pub fn into_welcome(self) -> Option<Welcome> {
         match self.body {
             MlsMessageBodyOut::Welcome(w) => Some(w),
             _ => None,
         }
     }
+}
 
+// Convenience functions for tests and test-utils
+
+#[cfg(any(feature = "test-utils", test))]
+impl MlsMessageOut {
     #[cfg(any(feature = "test-utils", test))]
     pub fn into_protocol_message(self) -> Option<ProtocolMessage> {
         let mls_message_in: MlsMessageIn = self.into();
