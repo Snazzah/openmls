@@ -1,3 +1,4 @@
+//! Exposed internal module (@snazzah/davey)
 use crate::ciphersuite::*;
 
 // Tree modules

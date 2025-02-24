@@ -1,3 +1,4 @@
+//! Exposed internal module (@snazzah/davey)
 use tls_codec::SecretVLBytes;
 
 use super::*;
@@ -27,7 +28,7 @@ impl core::fmt::Debug for AeadKey {
 /// AEAD Nonce
 #[derive(Clone, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(feature = "crypto-debug", derive(Debug))]
-pub(crate) struct AeadNonce([u8; NONCE_BYTES]);
+pub struct AeadNonce([u8; NONCE_BYTES]);
 
 #[cfg(not(feature = "crypto-debug"))]
 impl core::fmt::Debug for AeadNonce {

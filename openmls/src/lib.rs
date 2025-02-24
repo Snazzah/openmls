@@ -186,7 +186,7 @@ pub mod storage;
 // Private
 mod binary_tree;
 mod skip_validation;
-mod tree;
+pub mod tree;
 
 /// Single place, re-exporting the most used public functions.
 pub mod prelude;
