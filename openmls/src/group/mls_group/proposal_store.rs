@@ -93,7 +93,8 @@ pub struct QueuedProposal {
     proposal: Proposal,
     proposal_reference: ProposalRef,
     sender: Sender,
-    proposal_or_ref_type: ProposalOrRefType,
+    /// The proposal or ref type
+    pub proposal_or_ref_type: ProposalOrRefType,
 }
 
 impl QueuedProposal {
